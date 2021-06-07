@@ -1,5 +1,4 @@
 import 'package:flutter/foundation.dart';
-import 'package:shop_me/widgets/cart_item.dart';
 
 class CartItem {
   final String id;
@@ -83,7 +82,7 @@ class Cart with ChangeNotifier {
           quantity: exiatingCartItem.quantity - 1,
         ),
       );
-    }else{
+    } else {
       _items.remove(productId);
     }
     notifyListeners();

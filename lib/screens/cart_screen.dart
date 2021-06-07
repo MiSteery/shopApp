@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_me/providers/order.dart';
 
-import '../providers/cart.dart' show Cart;
-import '../widgets/cart_item.dart'; // as ci;  can be used instead of show card in cart.dart provider
+import 'package:shop_me/providers/cart.dart' show Cart;
+import 'package:shop_me/widgets/cart_item.dart'; // as ci;  can be used instead of show card in cart.dart provider
+import 'package:shop_me/providers/order.dart';
 
 class CartScreen extends StatelessWidget {
   static const routeName = '/cart';

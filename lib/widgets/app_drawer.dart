@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../screens/user_products.dart';
-import '../screens/order_screen.dart';
+import 'package:shop_me/screens/order_screen.dart';
+import 'package:shop_me/screens/user_products.dart';
 
 class AppDrawer extends StatelessWidget {
   @override
@@ -17,7 +17,7 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.shop),
             title: Text('Shop'),
-            onTap: (){
+            onTap: () {
               Navigator.of(context).pushReplacementNamed('/');
             },
           ),
@@ -25,16 +25,17 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.payment),
             title: Text('Orders'),
-            onTap: (){
+            onTap: () {
               Navigator.of(context).pushReplacementNamed(OrderScreen.routeName);
             },
           ),
-           Divider(),
+          Divider(),
           ListTile(
             leading: Icon(Icons.edit),
             title: Text('Manage Products'),
-            onTap: (){
-              Navigator.of(context).pushReplacementNamed(UserProductScreen.routeName);
+            onTap: () {
+              Navigator.of(context)
+                  .pushReplacementNamed(UserProductScreen.routeName);
             },
           ),
         ],

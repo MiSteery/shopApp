@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../screens/edit_product_screen.dart';
-import '../screens/user_products.dart';
-import './screens/order_screen.dart';
-import './screens/cart_screen.dart';
-import './screens/product_detail_screen.dart';
-import './screens/products_overview_screen.dart';
-import './providers/products.dart';
-import './providers/cart.dart';
-import './providers/order.dart';
+import 'package:shop_me/providers/cart.dart';
+import 'package:shop_me/providers/order.dart';
+import 'package:shop_me/providers/products.dart';
+import 'package:shop_me/screens/cart_screen.dart';
+import 'package:shop_me/screens/edit_product_screen.dart';
+import 'package:shop_me/screens/order_screen.dart';
+import 'package:shop_me/screens/product_detail_screen.dart';
+import 'package:shop_me/screens/products_overview_screen.dart';
+import 'package:shop_me/screens/user_products.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,8 +28,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (ctx) => Order(),
         ),
-       // ChangeNotifierProvider.value(value: Order());
-         
+        // ChangeNotifierProvider.value(value: Order());
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -44,7 +43,7 @@ class MyApp extends StatelessWidget {
           ProuctDetailScreen.routeName: (ctx) => ProuctDetailScreen(),
           CartScreen.routeName: (ctx) => CartScreen(),
           OrderScreen.routeName: (ctx) => OrderScreen(),
-          UserProductScreen.routeName:(ctx) => UserProductScreen(),
+          UserProductScreen.routeName: (ctx) => UserProductScreen(),
           EditProductScreen.routeName: (ctx) => EditProductScreen(),
         },
       ),

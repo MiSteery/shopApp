@@ -1,21 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../providers/product.dart';
-import '../screens/product_detail_screen.dart';
-import '../providers/cart.dart';
+import 'package:shop_me/providers/cart.dart';
+import 'package:shop_me/providers/product.dart';
+import 'package:shop_me/screens/product_detail_screen.dart';
 
 class ProductItem extends StatelessWidget {
-  // final String id;
-  // final String title;
-  // final String imageUrl;
-
-  // ProductItem({
-  //   required this.id,
-  //   required this.title,
-  //   required this.imageUrl,
-  // });
-
   @override
   Widget build(BuildContext context) {
     final product = Provider.of<Product>(context, listen: false);
@@ -29,11 +19,6 @@ class ProductItem extends StatelessWidget {
               ProuctDetailScreen.routeName,
               arguments: product.id,
             );
-            // Navigator.of(context).push(
-            //   MaterialPageRoute(
-            //     builder: (ctx) => ProuctDetailScreen(title),
-            //   ),
-            // );
           },
           child: Image.network(
             product.imageUrl,
@@ -64,8 +49,8 @@ class ProductItem extends StatelessWidget {
                 product.title,
               );
               ScaffoldMessenger.of(context).hideCurrentSnackBar();
-             // Scaffold.of(context).hideCurrentSnackBar();//old one
-             ScaffoldMessenger.of(context).showSnackBar( SnackBar(
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
                   content: Text('Added item to cart!'),
                   duration: Duration(seconds: 2),
                   action: SnackBarAction(
@@ -75,21 +60,7 @@ class ProductItem extends StatelessWidget {
                     },
                   ),
                 ),
-                );
-              
-              //old one
-              // Scaffold.of(context).showSnackBar(
-              //   SnackBar(
-              //     content: Text('Added item to cart!'),
-              //     duration: Duration(seconds: 2),
-              //     action: SnackBarAction(
-              //       label: 'Undo',
-              //       onPressed: () {
-              //         cart.removeSingleItem(product.id);
-              //       },
-              //     ),
-              //   ),
-              // );
+              );
             },
             icon: Icon(Icons.shopping_basket),
             color: Theme.of(context).accentColor,

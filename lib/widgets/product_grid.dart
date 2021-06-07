@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../providers/products.dart';
-import './product_item.dart';
+import 'package:shop_me/providers/products.dart';
+import 'package:shop_me/widgets/product_item.dart';
 
 class ProductsGrid extends StatelessWidget {
   final bool showFavs;
@@ -11,7 +11,7 @@ class ProductsGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final productsData = Provider.of<Products>(context);
-    final products = showFavs ? productsData.favoriteItem :productsData.items;
+    final products = showFavs ? productsData.favoriteItem : productsData.items;
     return GridView.builder(
       padding: const EdgeInsets.all(10),
       itemCount: products.length,
@@ -25,12 +25,12 @@ class ProductsGrid extends StatelessWidget {
       //itemBuilder definehow every gird item , cell  is build
       //.value is used because it is using the already create value so it will be effiecient
       itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
-        value:  products[i],
-          child: ProductItem(
-        // id: product[i].id,
-        // title: product[i].title,
-        // imageUrl: product[i].imageUrl,
-      ),
+        value: products[i],
+        child: ProductItem(
+            // id: product[i].id,
+            // title: product[i].title,
+            // imageUrl: product[i].imageUrl,
+            ),
       ),
     );
   }

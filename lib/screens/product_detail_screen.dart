@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_me/providers/product.dart';
 
-import '../providers/products.dart';
+import 'package:shop_me/providers/products.dart';
 
 class ProuctDetailScreen extends StatelessWidget {
-  // final String title;
-
-  // ProuctDetailScreen(this.title);
   static const routeName = '/product-detail-screen';
 
   @override
